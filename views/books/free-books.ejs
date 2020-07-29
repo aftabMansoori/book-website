@@ -6,20 +6,19 @@
 <div class="add mt-4">       
     <div class="row">
     <% book.forEach(book => { %>
-        <div class="col-md-3 col-6 mt-3">
+        <div class="col-md-3 col-12 mt-3">
           <div class="book">
             <center>
-              <img class="img-fluid" src="<%= book.coverImagePath %>">
+              <a href="/books/getbook/<%= book.id %> ">
+                <img class="img-fluid book-img" src="<%= book.coverImagePath %>">
+              </a>
             </center>
           </div>
-          <div class="mt-2">
-            <p class="h3 book-title"><%= book.name %></p>
+          <div class="book-dash mt-1">
             <p class="h3 book-title"><%= book.title %></p>
             <p class="small text-muted"><%= book.createdAt.toLocaleDateString() %></p>
+            <p class="h3 text-secondary book-head"><%= book.name %></p>
             <p><span class="book-head">Genre: </span><%= book.genre %></p>
-            <form action="/books/issue/<%= book.id %>" method="POST">
-                <button type="submit" class="btn btn-success m-2">Issue Book</button>
-            </form>
           </div>
         </div>
         <% }) %> 

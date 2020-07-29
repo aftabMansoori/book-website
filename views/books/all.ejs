@@ -44,6 +44,17 @@
             </a>
           </div>
     </div>
+
+    <div class="text-center">
+      <form class="search-box mt-3" action="/books/allbooks" method="GET">
+        <div>
+            <label for="title"></label>
+            <input type="text" class="search-box"  name="title" id="title" value="<%= searchOption.title %>">
+            <button class="btn btn-danger search-btn" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <!-- <br><br> -->
     <div class="main mt-5">
       
     <%- include('./partials/show-books.ejs') %> 

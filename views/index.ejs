@@ -43,8 +43,33 @@
 <p class="h3 text-center">Recent Uploads</p><hr class="hr-underline">
 
 <div class="main-home">
-    <%- include('./books/partials/show-books') %>
+  <div class="book-details">
+        <div class="row">
+            <% book.forEach(book => { %>
+                <div class="col-md-6 col-12 mt-3">
+                    <div class="row">
+                        <div class="col-sm-5 col-12">
+                            <div class="book">
+                                <center>
+                                  <img class="img-fluid book-img" src="<%= book.coverImagePath %>">
+                                </center>
+                            </div>
+                            <div class="book-name">
+                                <p class="book-title mt-3"><%= book.title %></p>
+                                <p class="book-head text-secondary"><%= book.name %></p>
+                                <p class="small text-muted"><%= book.createdAt.toLocaleDateString() %></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-6 d-sm-block d-none">
+                            <p class="book-description"><%= book.description %> </p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %> 
+        </div>
+    </div>
 </div>
+
 
  <%- include('./layouts/footer') %> 
   

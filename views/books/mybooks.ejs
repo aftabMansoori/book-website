@@ -9,12 +9,12 @@
             <div class="col-md-6 col-12 mt-3">
             <div class="book">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-5 mt-3">
                         <center>
-                            <img class="img-fluid" src="<%= book.coverImagePath %>">
+                            <img class="img-fluid book-img" src="<%= book.coverImagePath %>">
                         </center>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7 mt-2">
                         <p class="h3 book-title"><%= book.title %></p>
                         <p class="h3 book-head text-secondary"><%= book.name %></p>
                         <p class="small text-muted"><%= book.createdAt.toLocaleDateString() %></p>

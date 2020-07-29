@@ -325,11 +325,11 @@ button.add-btn:hover {
 }
 
 .book {
-    box-shadow: 0px 0px 4px gray;
+    /* box-shadow: 0px 0px 4px gray; */
     padding: 4px;
     border-radius: 10px;
     font-size: 16px;
-    background-color: #e8e8ea;
+    /* background-color: rgba(200, 210, 210, 0.6); */
 }
 
 .book-title {
@@ -354,12 +354,16 @@ button.add-btn:hover {
 
 img.book-img {
     border-radius: 10px;
+    height: 300px;
+    width: auto;
+    box-shadow: 0 0 1rem black;
 }
 
 .read-content {
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 30px;
+    font-size: 23px;
     line-height: 30px;
+    word-spacing: 15px;
 }
 
 .btn.book-img-btn {
@@ -371,10 +375,31 @@ img.book-img {
     margin-right: auto;
 }
 
+img.book-getimg {
+    border-radius: 10px;
+    height: 500px;
+    width: auto;
+    box-shadow: 0 0 10px black;
+}
+
 .main-home {
     position: relative;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+input.search-box {
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin: 1rem;
+}
+
+.book-dash {
+    margin-left: 10px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -417,6 +442,14 @@ img.book-img {
     .read-content {
         margin-left: 1rem;
         margin-right: 1rem;
+    }
+    .book-name {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+    .book-dash {
+        margin-left: 3rem;
+        /* margin-right: 1rem; */
     }
     .main-home {
         position: relative;

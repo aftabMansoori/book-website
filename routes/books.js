@@ -5,20 +5,21 @@ const User = require('../models/users');
 const { session } = require('passport');
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
-//Dasboard
-// router.get('/allbooks', checkAuthenticated, async (req, res) => {        
-//     const book = await Book.find().sort({ createdAt: 'desc' });
-//     res.render('books/all.ejs', {
-//         book: book
-//     });
-// });
-
 //All Books
-router.get('/allbooks', checkAuthenticated,async (req, res) => {
-    const book = await Book.find().sort({ createdAt: 'desc' });
-    res.render('books/all.ejs', {
-        book: book
-    });
+router.get('/allbooks', checkAuthenticated, async (req, res) => {
+    let query = Book.find()
+    if(req.query.title != null && req.query.title != '') {
+        query = query.regex('title', new RegExp(req.query.title, 'i'))
+    }
+    try {
+        const book = await query.exec()
+        res.render('books/all.ejs', {
+            book: book,
+            searchOption: req.query
+        });
+    } catch(error) {
+        console.log(error)
+    }
 });
 
 //New Books
@@ -146,6 +147,18 @@ router.get('/free', async (req, res) => {
     }
 })
 
+//getBooks
+router.get('/getbook/:id', async (req,res)=>{
+    try {
+        const book = await Book.findById(req.params.id)
+            res.render('books/getbook.ejs', {
+                book: book
+         })          
+    } catch (error) {
+      console.log(error)
+      res.redirect('/books/mybooks');
+    }
+})
 
 
 //DELETE
