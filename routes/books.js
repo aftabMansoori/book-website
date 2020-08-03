@@ -31,12 +31,12 @@ router.post('/add', async (req, res) => {
     // const name = req.user.name;
     // console.log(name)
     let book = new Book({
-        name: req.body.name,
+        name: req.user.name,
         title: req.body.title,
         createdAt: req.body.createdAt,
         genre: req.body.genre,
         description: req.body.description,
-        pageCount: req.body.pageCount,
+        // pageCount: req.body.pageCount,
         bookType: req.body.bookType,
         price: req.body.price,
         content: req.body.content
@@ -143,7 +143,7 @@ router.get('/free', async (req, res) => {
         })
     } catch (error) {
         console.log(error)
-        res.redirect('/books/dashboard')
+        res.redirect('/books/allbooks')
     }
 })
 

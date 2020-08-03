@@ -6,10 +6,10 @@
 <div class="main-home">    
     <div class="row">
         <% book.forEach(book => { %>
-            <div class="col-md-6 col-12 mt-3">
+            <div class="col-md-6 col-12 mt-2">
             <div class="book">
                 <div class="row">
-                    <div class="col-sm-5 mt-3">
+                    <div class="col-sm-5 mt-2 mb-1">
                         <center>
                             <img class="img-fluid book-img" src="<%= book.coverImagePath %>">
                         </center>
@@ -26,11 +26,18 @@
                         </p>
                     </div>
                 </div>
-                <center>
-                    <a href="/books/edit/<%= book.id %>" class="btn btn-primary m-1 ">Edit</a>
-                    <a class="btn btn-success d-inline m-1" href='/books/read/<%= book.id %> '>Read</a>
+                <center class="crud-btns">
+                    <a href="/books/edit/<%= book.id %>" class="btn btn-primary m-1">
+                        <img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/>
+                    </a>
+                    <a class="btn btn-success d-inlinem-2" href='/books/read/<%= book.id %> '>
+                        <img src="https://img.icons8.com/material-rounded/26/000000/read.png"/>
+                        <!-- <img src="https://img.icons8.com/ios-filled/24/000000/read.png"/> -->
+                    </a>
                     <form action="/books/<%= book.id %>?_method=DELETE" method="POST" class="d-inline m-1">
-                        <button class="btn btn-danger" type="submit">DELETE</button>
+                        <button class="btn btn-danger" type="submit">
+                            <img src="https://img.icons8.com/metro/24/000000/trash.png"/>
+                        </button>
                     </form>
                 </center>
             </div>

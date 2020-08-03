@@ -117,7 +117,7 @@ function checkNotAuthenticated(req, res, next) {
 
 function redirectLogin (req, res, next) {
   if(req.isAuthenticated()) {
-    return res.redirect('/books/dashboard')
+    return res.redirect('/books/allbooks')
   }
   next()
 }
